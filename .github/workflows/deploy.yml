@@ -25,12 +25,6 @@ jobs:
         shell: bash
         run: cd . && dx build --release && cp ./dist/index.html ./dist/404.html
 
-      - name: Deploy Project 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
-        with:
-            branch: gh-pages
-            folder: ./dist
-            clean: false
       - name: upload
         uses: actions/upload-pages-artifact@v3
         with:
