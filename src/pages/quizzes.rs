@@ -3,7 +3,6 @@ use dioxus_router::prelude::*;
 
 use crate::{types::get_quizzes, Route};
 
-// create a component that renders a div with the text "Hello, world!"
 #[component]
 pub fn Quizzes(cx: Scope) -> Element {
     let quizzes = get_quizzes();
@@ -13,7 +12,7 @@ pub fn Quizzes(cx: Scope) -> Element {
             div { class: "text-4xl font-bold", "Quizzes" }
             div { class: "h-10" }
             quizzes.into_iter().map(|quiz| rsx! {
-                Link { class: "bg-white shadow-xl rounded-xl p-4 w-3/4 border-2 border-black",
+                Link { class: "bg-white shadow-xl rounded-xl p-4 w-3/4 border-2 border-black hover:shadow-2xl hover:-translate-y-1",
                     to: Route::Quiz { quiz_id: quiz.id },
                     h1 { class: "text-2xl font-bold",quiz.title},
                     p { class: "text-gray-600", quiz.description},

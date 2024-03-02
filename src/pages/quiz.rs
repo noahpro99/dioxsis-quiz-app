@@ -1,6 +1,10 @@
 use dioxus::prelude::*;
+use dioxus_router::components::Link;
 
-use crate::types::{self, get_quizzes, Question, QuestionOption};
+use crate::{
+    types::{self, get_quizzes, Question, QuestionOption},
+    Route,
+};
 use itertools::Itertools;
 
 async fn get_quiz(quiz_id: i32) -> types::Quiz {
@@ -106,8 +110,13 @@ fn QuizQuestion<'a>(cx: Scope<'a, QuizQuestionProps<'a>>) -> Element<'a> {
 fn ResultsPage(cx: Scope, score: i32) -> Element {
     cx.render(rsx! {
         div { class: "flex flex-col min-h-32 w-full items-center",
-            div { class: "h-10" }
-            div { class: "text-2xl font-bold", "You got {score}% correct!" }
+            div { class: "h-8" }
+            div { class: "text-2xl font-bold p-2", "You got {score}% correct!" }
+            div { class: "text-lg p-2", "Thanks for taking the quiz!" }
+            Link { class: "p-4 bg-blue-500 rounded-full shadow-xl hover:-translate-y-1",
+                to: Route::Quizzes {},
+                "Back to Home"
+            }
         }
     })
 }
