@@ -1,6 +1,6 @@
 mod quizzes;
-mod quiz_question;
+mod quiz;
 
 
 pub use quizzes::Quizzes;
-pub use quiz_question::Quiz;
+pub use quiz::Quiz;

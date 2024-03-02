@@ -21,7 +21,7 @@ pub enum Route {
 }
 
 pub fn App(cx: Scope) -> Element {
-    dioxus_logger::init(LevelFilter::Info).expect("failed to init logger");
+    dioxus_logger::init(LevelFilter::Debug).expect("failed to init logger");
 
     render! {
         Router::<Route> {}

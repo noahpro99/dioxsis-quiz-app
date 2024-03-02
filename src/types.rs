@@ -1,4 +1,4 @@
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Default, Clone)]
 pub struct Quiz {
     pub id: i32,
     pub title: String,
@@ -6,7 +6,7 @@ pub struct Quiz {
     pub questions: Vec<Question>,
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Default, Clone)]
 pub struct Question {
     pub id: i32,
     pub title: String,
