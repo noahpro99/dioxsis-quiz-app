@@ -10,8 +10,8 @@ pub fn Quizzes(cx: Scope) -> Element {
 
     cx.render(rsx! {
         div { class: "flex flex-col items-center pt-20 gap-2 bg-blue-200 min-h-screen",
-            div { class: "text-4xl font-bold", "Quizzes"},
-            div { class: "h-10"}
+            div { class: "text-4xl font-bold", "Quizzes" }
+            div { class: "h-10" }
             quizzes.into_iter().map(|quiz| rsx! {
                 Link { class: "bg-white shadow-xl rounded-xl p-4 w-3/4 border-2 border-black",
                     to: Route::Quiz { quiz_id: quiz.id },
