@@ -3,4 +3,4 @@ mod quiz_question;
 
 
 pub use quizzes::Quizzes;
-pub use quiz_question::QuizQuestion;
+pub use quiz_question::Quiz;
